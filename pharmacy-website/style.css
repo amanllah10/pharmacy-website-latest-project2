@@ -344,6 +344,8 @@ button:hover {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px 0px;
+        width: 90%;
+        margin: auto !important;
     }
     .slider1-imgs {
         width: 70px;
