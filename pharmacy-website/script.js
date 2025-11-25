@@ -27,7 +27,7 @@ buttons.forEach((btns) => {
         localStorage.setItem('producttitle', title)
         localStorage.setItem('productalt', alt)
         console.log('Alt', alt)
-        location.href = './buypage.html'
+        location.href = 'pharmacy-website/buypage.html'
     })
 })
 
