@@ -67,14 +67,16 @@ $(".slider2").slick({
 
 $(".slider1").slick({
     infinite: true,
-    speed: 5000,           // jitni slow/smooth scroll chahiye
+    speed: 2000,          // TOO HIGH speed mat rakho
     autoplay: true,
-    autoplaySpeed: 0,      // continuous scroll ke liye 0
-    cssEase: "linear",     // bilkul smooth scrolling
-    slidesToShow: 1,
+    autoplaySpeed: 0,     // continuous scrolling ke liye 0
+    cssEase: "linear",    // bilkul smooth
+    slidesToShow: 3,      // jitne images dikhani hon
     slidesToScroll: 1,
     arrows: false,
-    dots: false
+    dots: false,
+    pauseOnHover: false,   // hover par rukna nahi chahiye
+    pauseOnFocus: false
 });
 $(".slider").slick({
     dots: false,
