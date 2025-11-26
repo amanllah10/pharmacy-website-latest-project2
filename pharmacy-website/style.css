@@ -7,17 +7,99 @@
 }
 
 /* navbar styling */
-.navbar-section {
-    background-color: aquamarine;
-}
+.navbar-section {}
 
 .search-img {
     width: 80px !important;
     height: 80px;
 }
 
+.shop-img {
+    width: 50px;
+    height: 50px;
+}
+
 /* hero section styling */
-.hero-section {
+.slider-section {
+    width: 50%;
+    margin: auto;
+}
+
+.slider {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.slider1 {
+    width: 90%;
+    margin: auto;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.slider1-slides {
+    width: 250px !important;
+
+}
+
+.slider1a {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.slider2 {
+    width: 90%;
+    margin: auto;
+}
+
+.slide {
+    width: 100%;
+    height: 500px !important;
+}
+
+.slides {
+    width: 300px !important;
+
+}
+
+.slides:hover {
+    transform: scale(1.025) !important;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+/* Slick arrows ki styling */
+.slick-prev,
+.slick-next {
+    background: none;
+    /* button background hatao */
+    border: none;
+    /* button border hatao */
+    font-size: 30px;
+    /* arrow size */
+    color: black;
+    /* arrow color */
+    z-index: 10;
+    width: auto;
+    height: auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+    /* arrow color */
+    font-size: 30px;
+    /* arrow size */
+}
+
+
+/* hero section styling */
+/* .hero-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,7 +135,7 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 3px solid white; /* Cursor */
+  border-right: 3px solid white; /* Cursor 
   width: 0;
   animation: typing 2s steps(8), blink 0.7s infinite;
 }
@@ -66,10 +148,10 @@
     color: white;
     width: 70%;
     margin: auto;
-}
-
+} */
+/*
 /* animation styling */
-@keyframes typing {
+/* @keyframes typing {
     from {
         width: 0;
     }
@@ -80,11 +162,11 @@
 }
 
 /* Cursor blink */
-@keyframes blink {
+/* @keyframes blink {
     50% {
         border-color: transparent;
     }
-}
+} */
 
 
 /* product section styling */
@@ -111,12 +193,10 @@
     border-radius: 20px;
 }
 
-.product-items:hover{
-    background-color: aqua;
-}
+
 
 /* countact us section styling */
-.contact-us-section{
+.contact-us-section {
     height: 30vh;
     margin-top: 5vh;
     display: flex;
@@ -125,7 +205,8 @@
     background-color: black;
     color: white;
 }
-.contact-us-cont{
+
+.contact-us-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,54 +238,58 @@ input[type=text] {
 }
 
 
-h2{
+h2 {
     padding: 10px;
 }
-button{
+
+button {
     padding: 7px;
     border-radius: 20px;
     margin-bottom: 5px;
     width: 200px;
 }
-button:hover{
+
+button:hover {
     background-color: blue;
     color: white;
 }
 
 /* media queries ui ux styling */
-@media (max-width:1650px){
-    .product-cont{
+@media (max-width:1650px) {
+    .product-cont {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-@media (max-width:1000px){
-    .product-cont{
+@media (max-width:1000px) {
+    .product-cont {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media(max-width:870px){
-    .hero-h1{
+@media(max-width:870px) {
+    .hero-h1 {
         width: 80%;
         margin: auto;
         font-size: 50px;
     }
-    .hero-p{
+
+    .hero-p {
         width: 80%;
         margin: auto;
     }
 }
 
-@media(max-width:600px){
-    .hero-h1{
+@media(max-width:600px) {
+    .hero-h1 {
         width: 95%;
         margin: auto;
         font-size: 35px;
     }
-    .hero-p{
+
+    .hero-p {
         width: 95%;
         margin: auto;
         font-size: 25px;
@@ -212,8 +297,73 @@ button:hover{
     }
 }
 
-@media (max-width:550px){
-    .product-cont{
+@media (max-width: 600px) {
+    .slider-section {
+        width: 80%;
+        margin: auto;
+    }
+
+
+
+    .slider1 {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px 0px;
+        width: 90%;
+        height: 500px;
+        border-radius: 10px;
+    }
+
+
+    .slider1 .slides {
+        width: 100%;
+    }
+
+    .slider1-imgs {
+        width: 80px;
+        height: 80px;
+    }
+
+    button {
+        width: 80px;
+    }
+
+    .slider1-slides {
+        width: 100px !important;
+
+    }
+
+    .navbar-section {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media(max-width:450px) {
+    .slider1-imgs {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin: 0px;
+
+    }
+    .slider1{
+        margin: 0px;
+    }
+
+    .slider1-slides {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+@media (max-width:550px) {
+    .product-cont {
         display: grid;
         grid-template-columns: 1fr;
     }

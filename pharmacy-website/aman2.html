@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Assignment</title>
+</head>
+
+<body>
+
+    <script>
+
+        let num = Number(prompt("Enter a number to find factorial:"));
+        let factorial = 1;
+        for (let i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+        alert("Factorial of " + num + " is " + factorial);
+        let n = Number(prompt("Enter how many triangular numbers to print:"));
+        let sum = 0;
+        let result = "";
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+            result += sum + " ";
+        }
+        alert("Triangular numbers: " + result);
+        sum = 0;
+        result = "";
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+            result += sum + " ";
+        }
+        alert("Triangular numbers (again): " + result);
+        let str = prompt("Enter a string:");
+        let chars = "";
+        for (let i = 0; i < str.length; i++) {
+            chars += str[i] + "\n";
+        }
+        alert("Characters in the string:\n" + chars);
+        let divisibleBy3 = "";
+        for (let i = 1; i <= 30; i++) {
+            if (i % 3 === 0) {
+                divisibleBy3 += i + " ";
+            }
+        }
+        alert("Numbers divisible by 3: " + divisibleBy3);
+        let evenSum = 0;
+        for (let i = 2; i <= 100; i += 2) {
+            evenSum += i;
+        }
+        alert("Sum of all even numbers from 1 to 100: " + evenSum);
+        let squares = "";
+        for (let i = 1; i <= 10; i++) {
+            squares += i + "^2 = " + (i * i) + "\n";
+        }
+        alert("Squares of numbers 1 to 10:\n" + squares);
+        let evenNumbers = "";
+        for (let i = 2; i <= 50; i += 2) {
+            evenNumbers += i + " ";
+        }
+        alert("Even numbers from 1 to 50: " + evenNumbers);
+        let oddNumbers = "";
+        for (let i = 1; i <= 30; i += 2) {
+            oddNumbers += i + " ";
+        }
+        alert("Odd numbers from 1 to 30: " + oddNumbers);
+        let inputStr = prompt("Enter a string to count vowels:");
+        let vowelsCount = 0;
+        let vowels = "aeiouAEIOU";
+        for (let i = 0; i < inputStr.length; i++) {
+            if (vowels.includes(inputStr[i])) {
+                vowelsCount++;
+            }
+        }
+        alert("Number of vowels in the string: " + vowelsCount);
+        const correctPassword = "12345";
+        let userPassword;
+        while (true) {
+            userPassword = prompt("Enter the password:");
+            if (userPassword === correctPassword) {
+                alert("Password correct!");
+                break;
+            } else {
+                alert("Incorrect password, try again.");
+            }
+        }
+
+        let userPassword2;
+        do {
+            userPassword2 = prompt("Enter the password (do-while):");
+        } while (userPassword2 !== correctPassword);
+        alert("Password correct (do-while)!");
+    </script>
+
+</body>
+
+</html>
