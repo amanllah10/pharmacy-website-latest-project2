@@ -20,7 +20,7 @@ buttons.forEach((btn) => {
         localStorage.setItem('productalt', alt);
 
         console.log('Alt:', alt);
-        location.href = '../pharmacy-website/buypage.html';
+        location.href = './buypage.html';
     });
 });
 
