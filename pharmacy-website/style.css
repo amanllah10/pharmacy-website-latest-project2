@@ -38,7 +38,7 @@ body {
 }
 
 .navbar-container img {
-    width: 28px;
+    width: 50px;
     cursor: pointer;
 }
 
@@ -204,6 +204,10 @@ body {
 
 .product-items button:hover {
     background-color: #0073e6;
+}
+
+.main-h1{
+    text-align: center;
 }
 
 /* ========================

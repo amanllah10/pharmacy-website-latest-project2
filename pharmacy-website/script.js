@@ -1,47 +1,39 @@
+// Initialize AOS
 AOS.init();
 
-// button select
-let buttons = document.querySelectorAll('button')
-let slider1a = document.querySelector('.slide1a')
-let slider1 = document.querySelector('.slider1')
-let slider2 = document.querySelector('.slider2')
-let slider1H2 = document.querySelectorAll('.slider1-h2s')
+// Select buttons and sliders
+let buttons = document.querySelectorAll('button');
+let slider1 = document.querySelector('.slider1');
+let slider2 = document.querySelector('.slider2');
+let slider1H2 = document.querySelectorAll('.slider1-h2s');
 
-// click buttons operation
-buttons.forEach((btns) => {
-    btns.addEventListener('click', () => {
-        let product = btns.parentElement
+// Button click event
+buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        let product = btn.parentElement;
+        let image = product.querySelector('img').src;
+        let title = product.querySelector('h2').innerHTML;
+        let alt = product.querySelector('img').alt;
 
-        let image = product.querySelector('img').src
-        let title = product.querySelector('h2').innerHTML
-        let alt = product.querySelector('img').alt
+        localStorage.setItem('productimage', image);
+        localStorage.setItem('producttitle', title);
+        localStorage.setItem('productalt', alt);
 
-        localStorage.setItem('productimage', image)
-        localStorage.setItem('producttitle', title)
-        localStorage.setItem('productalt', alt)
-        console.log('Alt', alt)
-        location.href = 'pharmacy-website/buypage.html'
-    })
-})
-
-window.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth <= 600) {
-        console.log('You have come on 600 or less');
-    } else {
-        console.log('Screen badi hai');
-    }
+        console.log('Alt:', alt);
+        location.href = '../pharmacy-website/buypage.html';
+    });
 });
 
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 600) {
-        console.log('You have come on 600 or less');
-        slider1a.classList.remove('slick-initialized', 'slick-slider')
-        console.log(slider1a.classList)
-    } else {
-        console.log('Screen badi hai');
-    }
-})
+// Hero slider
+$(".slider").slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000
+});
 
+// Slider2 initialization
 $(".slider2").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -52,51 +44,49 @@ $(".slider2").slick({
     cssEase: 'linear'
 });
 
-
-$(".slider1").slick({
-    infinite: true,
-    speed: 2000,
-    autoplay: true,
-    autoplaySpeed: 0, 
-    cssEase: "linear",
-    slidesToShow: 3, 
-    slidesToScroll: 1,
-    arrows: false,
-    dots: false,
-    pauseOnHover: false, 
-    pauseOnFocus: false
-});
-$(".slider").slick({
-    dots: false,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 2000
-});
-
-$(document).ready(function () {
-
-    function checkWidth() {
-        if ($(window).width() <= 600) {
-            if ($('.slider1').hasClass('slick-initialized')) {
-                slider1.style.height = 'auto'
-                slider2.style.width = '90%'
-                slider2.style.margin = 'auto' 
-                slider1H2.forEach((h2s)=>{
-                    h2s.innerHTML = ''
-                })
-            }
-        } else {
-            if (!$('.slider1').hasClass('slick-initialized')) {
-                $('.slider1').slick({
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                });
-            }
+// Function to initialize slider1 based on screen width
+function initSlider1() {
+    if ($(window).width() <= 600) {
+        // Mobile view: destroy if exists, then init with 1 slide
+        if ($('.slider1').hasClass('slick-initialized')) {
+            $('.slider1').slick('unslick');
+        }
+        $('.slider1').slick({
+            infinite: true,
+            speed: 2000,
+            autoplay: true,
+            autoplaySpeed: 0,
+            cssEase: "linear",
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            pauseOnFocus: false
+        });
+        slider1.style.height = 'auto';
+    } else {
+        // Desktop: init with 3 slides if not already initialized
+        if (!$('.slider1').hasClass('slick-initialized')) {
+            $('.slider1').slick({
+                infinite: true,
+                speed: 2000,
+                autoplay: true,
+                autoplaySpeed: 0,
+                cssEase: "linear",
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                pauseOnFocus: false
+            });
         }
     }
+}
 
-    checkWidth();
-    $(window).resize(checkWidth);
+// Initialize on DOM load and window resize
+$(document).ready(function () {
+    initSlider1();
+    $(window).resize(initSlider1);
 });
