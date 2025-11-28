@@ -1,10 +1,3 @@
-// type writer operation
-// var typed = new Typed("#typed", {
-//     strings: ["Pharmacy"],
-//     typeSpeed: 80,      
-//     backSpeed: 0,        
-//     loop: true           
-// });
 AOS.init();
 
 // button select
@@ -31,11 +24,6 @@ buttons.forEach((btns) => {
     })
 })
 
-// if(window.innerWidth <= 600){
-//     console.log('you have come on 600')
-// }else{
-//     console.log('sceen badi hai')
-// }
 window.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth <= 600) {
         console.log('You have come on 600 or less');
@@ -56,7 +44,7 @@ window.addEventListener('resize', () => {
 
 $(".slider2").slick({
     slidesToShow: 1,
-    slidesToScroll: 1, // ek slide per scroll
+    slidesToScroll: 1,
     variableWidth: true,
     infinite: true,
     speed: 300,
@@ -67,15 +55,15 @@ $(".slider2").slick({
 
 $(".slider1").slick({
     infinite: true,
-    speed: 2000,          // TOO HIGH speed mat rakho
+    speed: 2000,
     autoplay: true,
-    autoplaySpeed: 0,     // continuous scrolling ke liye 0
-    cssEase: "linear",    // bilkul smooth
-    slidesToShow: 3,      // jitne images dikhani hon
+    autoplaySpeed: 0, 
+    cssEase: "linear",
+    slidesToShow: 3, 
     slidesToScroll: 1,
     arrows: false,
     dots: false,
-    pauseOnHover: false,   // hover par rukna nahi chahiye
+    pauseOnHover: false, 
     pauseOnFocus: false
 });
 $(".slider").slick({
@@ -91,7 +79,6 @@ $(document).ready(function () {
     function checkWidth() {
         if ($(window).width() <= 600) {
             if ($('.slider1').hasClass('slick-initialized')) {
-                $('.slider1').slick('unslick'); // slider ko band kar do
                 slider1.style.height = 'auto'
                 slider2.style.width = '90%'
                 slider2.style.margin = 'auto' 
@@ -110,6 +97,6 @@ $(document).ready(function () {
         }
     }
 
-    checkWidth();  // On load
-    $(window).resize(checkWidth);  // On resize
+    checkWidth();
+    $(window).resize(checkWidth);
 });
