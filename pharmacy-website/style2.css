@@ -54,6 +54,55 @@ body {
     margin-bottom: 10px;
 }
 
+.add-to-cart{
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.add-to-cart:hover{
+    background: darkgreen;
+}
+
+/* Quantity Container */
+.qty-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* buttons ke beech space */
+    margin-top: 10px;
+}
+
+/* Buttons */
+.qty-container button {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.qty-container button:hover {
+    background-color: #ddd;
+}
+
+/* Quantity number */
+.qty-container .qty {
+    display: inline-block;
+    min-width: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+
 /* ========================
    ALT DESCRIPTION
 ======================== */

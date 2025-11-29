@@ -21,6 +21,10 @@ buttons.forEach((btn) => {
 
         console.log('Alt:', alt);
         location.href = 'pharmacy-website/buypage.html';
+
+        const url = `buypage.html?img=${encodeURIComponent(image)}&title=${encodeURIComponent(title)}&alt=${encodeURIComponent(alt)}`;
+        console.log('Navigating to:', url);
+        location.href = url;
     });
 });
 
