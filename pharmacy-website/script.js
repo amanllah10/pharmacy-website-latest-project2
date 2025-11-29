@@ -20,8 +20,7 @@ buttons.forEach((btn) => {
         localStorage.setItem('productalt', alt);
 
         console.log('Alt:', alt);
-        const url = `pharmacy-website/buypage.html?img=${encodeURIComponent(image)}&title=${encodeURIComponent(title)}&alt=${encodeURIComponent(alt)}`;
-        location.href = url;
+        location.href = 'pharmacy-website/buypage.html';
 
     });
 });
