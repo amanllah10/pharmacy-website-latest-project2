@@ -47,7 +47,7 @@ if (alt.innerHTML === 'relief') {
     img4.src = '../images/DSC00017.JPG'
 }
 
-// ================= QUANTITY SYSTEM =================
+// QUANTITY SYSTEM
 
 let plusBtn = document.querySelector('.plus');
 let minusBtn = document.querySelector('.minus');
@@ -67,7 +67,7 @@ minusBtn.addEventListener('click', function () {
     }
 });
 
-// ================= ADD TO CART WITH LIVE UPDATE =================
+//ADD TO CART WITH LIVE UPDATE
 
 let addToCartBtn = document.querySelector('.add-to-cart');
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -77,10 +77,10 @@ addToCartBtn.addEventListener('click', function () {
     let existingProduct = cart.find(item => item.title === buyTitle.innerHTML);
 
     if (existingProduct) {
-        // ✅ same product ho to sirf quantity update hogi
+        // same product ho to sirf quantity update hogi
         existingProduct.quantity += quantity;
     } else {
-        // ✅ new product ho to cart mai add hoga
+        // new product ho to cart mai add hoga
         let product = {
             image: buyImg.src,
             title: buyTitle.innerHTML,
@@ -92,7 +92,7 @@ addToCartBtn.addEventListener('click', function () {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    alert('Product Quantity Local Storage Mai Update Ho Gayi ✅');
+    alert('Product Quantity Local Storage Mai Update Ho Gayi');
 
     // quantity reset after add
     quantity = 1;
