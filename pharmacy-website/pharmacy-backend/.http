@@ -1,0 +1,54 @@
+### Create a new product
+POST http://localhost:5000/api/products
+Content-Type: application/json
+
+{
+  "name": "Vitamin C",
+  "price": 1200,
+  "description": "Boosts immunity",
+  "image": "vitaminc.jpg"
+}
+
+### Get all products
+GET http://localhost:5000/api/products
+
+### Get a single product by ID
+GET http://localhost:5000/api/products/692c3ccc6eae3edc4cab754d
+
+### Create a new user
+POST http://localhost:5000/api/users/register
+Content-Type: application/json
+
+{
+  "name": "Amanullah",
+  "email": "aman@example.com",
+  "password": "Test1234"
+}
+
+### Get all users
+GET http://localhost:5000/api/users
+
+### Create a new order
+POST http://localhost:5000/api/orders
+Content-Type: application/json
+
+{
+  "user": {
+    "name": "Amanullah",
+    "email": "aman@example.com",
+    "phone": "03001234567",
+    "address": "Karachi, Pakistan"
+  },
+  "items": [
+    {
+      "name": "Vitamin C",
+      "image": "vitaminc.jpg",
+      "price": 1200,
+      "quantity": 2
+    }
+  ],
+  "total": 2400
+}
+
+### Get all orders
+GET http://localhost:5000/api/orders
